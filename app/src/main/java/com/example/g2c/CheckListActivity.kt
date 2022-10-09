@@ -1,5 +1,6 @@
 package com.example.g2c
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -36,7 +37,14 @@ class CheckListActivity : AppCompatActivity(),ItemClickListener {
         binding.fabAdd.setOnClickListener {
             showAddDialog()
         }
+
+        binding.checkListToBookingDetails.setOnClickListener {
+            val intent = Intent(this,BookingDetailActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 
     private fun showAddDialog() {
         val builder = AlertDialog.Builder(this)
@@ -143,6 +151,7 @@ class CheckListActivity : AppCompatActivity(),ItemClickListener {
         }
     }
 
+    //Onclick
     override fun onClick(checkList: CheckList) {
       val currentPosition = checkList.uniqueKey.toString()
         showDeleteDialog(currentPosition)
