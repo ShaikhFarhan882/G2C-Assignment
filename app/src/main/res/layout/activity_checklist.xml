@@ -15,7 +15,6 @@
 
 
         <TextView
-            android:layout_marginTop="1dp"
             android:id="@+id/Banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,8 +45,8 @@
             android:id="@+id/fab_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add"
             android:backgroundTint="@color/black"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.921"
