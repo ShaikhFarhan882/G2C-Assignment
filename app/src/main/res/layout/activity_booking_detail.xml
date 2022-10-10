@@ -24,10 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
                 android:elevation="8dp"
                 app:cardCornerRadius="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/service_banner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -115,6 +116,7 @@
                 android:layout_marginEnd="10dp"
                 android:elevation="8dp"
                 app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@id/ServiceCheckList"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,12 +248,11 @@
                 android:backgroundTint="@color/banner_bg"
                 android:elevation="8dp"
                 app:cardCornerRadius="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/CustomerReview"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/service_banner"
-                app:layout_constraintVertical_bias="0.077">
+                app:layout_constraintTop_toBottomOf="@+id/service_banner">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -388,8 +389,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:elevation="8dp"
                     android:backgroundTint="@color/white"
+                    android:elevation="8dp"
                     app:cardCornerRadius="15dp">
 
                     <LinearLayout
@@ -453,23 +454,78 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15sp"
-                                    android:textColor="@color/black"
-                                    android:textAlignment="textStart"
                                     android:padding="5dp"
-                                    android:text="@string/review"/>
+                                    android:text="@string/review"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
 
                             </LinearLayout>
-
 
 
                         </LinearLayout>
                     </LinearLayout>
 
 
-
                 </com.google.android.material.card.MaterialCardView>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@id/CustomerReview"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Frequently Asked Questions"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Which engine oil do you use?"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Are there any additional charges other than mentioned price?"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Which engine oil do you use?"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:textColor="@color/black"/>
 
             </LinearLayout>
 
