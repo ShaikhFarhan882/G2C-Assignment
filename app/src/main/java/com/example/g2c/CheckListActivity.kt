@@ -1,5 +1,6 @@
 package com.example.g2c
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,7 +48,8 @@ class CheckListActivity : AppCompatActivity(),ItemClickListener {
 
 
     private fun showAddDialog() {
-        val builder = AlertDialog.Builder(this)
+
+   /*     val builder = AlertDialog.Builder(this)
         val inflater = layoutInflater
         val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
         val editText = dialogLayout.findViewById<EditText>(R.id.checkItemName)
@@ -61,12 +63,30 @@ class CheckListActivity : AppCompatActivity(),ItemClickListener {
         with(builder) {
             setView(dialogLayout)
             show()
+        }*/
+
+        val dialogBinding = layoutInflater.inflate(R.layout.edit_text_layout,null)
+        val myDialog = Dialog(this)
+        myDialog.setContentView(dialogBinding)
+        myDialog.setCancelable(true)
+        myDialog.show()
+
+        val editText = dialogBinding.findViewById<EditText>(R.id.checkItemName)
+        val button = dialogBinding.findViewById<Button>(R.id.AddCheckItem)
+
+        button.setOnClickListener {
+            val checkListItem = editText.text.toString()
+            editText.text.clear()
+            addData(checkListItem)
+            myDialog.dismiss()
         }
+
 
     }
 
     private fun showDeleteDialog(position : String) {
-        val builder = AlertDialog.Builder(this)
+
+  /*      val builder = AlertDialog.Builder(this)
         val inflater = layoutInflater
         val dialogLayout = inflater.inflate(R.layout.delete_dialog, null)
         val button = dialogLayout.findViewById<Button>(R.id.DeleteItem)
@@ -86,6 +106,28 @@ class CheckListActivity : AppCompatActivity(),ItemClickListener {
         with(builder) {
             setView(dialogLayout)
             show()
+        }*/
+
+        val dialogBinding = layoutInflater.inflate(R.layout.delete_dialog,null)
+        val myDialog = Dialog(this)
+        myDialog.setContentView(dialogBinding)
+        myDialog.setCancelable(true)
+        myDialog.show()
+
+        val button = dialogBinding.findViewById<Button>(R.id.DeleteItem)
+        button.setOnClickListener {
+            //Clearing the arrayList
+            checkList.clear()
+
+            databaseReference.child(position).removeValue().addOnCompleteListener {
+                if(it.isSuccessful){
+                    Toast.makeText(this@CheckListActivity,"Item Deleted",Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@CheckListActivity,"Something went wrong",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            myDialog.dismiss()
         }
 
     }

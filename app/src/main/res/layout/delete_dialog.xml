@@ -9,7 +9,7 @@
     <TextView
         android:layout_marginTop="5dp"
         android:id="@+id/delete_text"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Delete?"
         android:textAlignment="center"
@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/DeleteItem"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:backgroundTint="@color/black"
